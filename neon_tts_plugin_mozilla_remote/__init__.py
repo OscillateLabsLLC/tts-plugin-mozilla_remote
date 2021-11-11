@@ -38,7 +38,7 @@ class MozillaRemoteTTS(TTS):
     def __init__(self, lang="en-us", config=None):
         config = config or get_neon_tts_config().get("mozilla", {})
         super(MozillaRemoteTTS, self).__init__(lang, config, MozillaTTSValidator(self),
-                                               audio_ext="mp3",
+                                               audio_ext="wav",
                                                ssml_tags=["speak"])
         self.base_url = config.get("api_url", "http://0.0.0.0:5002/api/tts")
 
