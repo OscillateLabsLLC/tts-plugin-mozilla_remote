@@ -2,7 +2,7 @@
 
 name: Run Unit Tests
 on:
-  push:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -27,7 +27,7 @@ jobs:
           pip install pytest pytest-timeout
           pytest tests/test_mtts.py --junitxml=tests/tts-test-results.xml
         env:
-          TTS_URL: ${{secrets.tts_url}}
+          TTS_URL: "http://2222.us:5002/api/tts"
       - name: Upload TTS test results
         uses: actions/upload-artifact@v2
         with:

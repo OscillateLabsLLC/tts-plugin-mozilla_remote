@@ -23,7 +23,8 @@ from urllib.parse import urlencode
 from urllib.request import urlopen
 from neon_utils.configuration_utils import get_neon_tts_config
 from neon_utils.logger import LOG
-from neon_utils.parse_utils import format_speak_tags
+from neon_utils.parse_utils import format_speak_tags, normalize_string_to_speak
+
 try:
     from neon_audio.tts import TTS, TTSValidator
 except ImportError:
@@ -38,17 +39,17 @@ class MozillaRemoteTTS(TTS):
     def __init__(self, lang="en-us", config=None):
         config = config or get_neon_tts_config().get("mozilla", {})
         super(MozillaRemoteTTS, self).__init__(lang, config, MozillaTTSValidator(self),
-                                               audio_ext="mp3",
+                                               audio_ext="wav",
                                                ssml_tags=["speak"])
         self.base_url = config.get("api_url", "http://0.0.0.0:5002/api/tts")
 
     def get_tts(self, sentence, wav_file, speaker=None):
         stopwatch = Stopwatch()
 
-        to_speak = format_speak_tags(sentence).lstrip("<speak>").rstrip("</speak>")  # TODO: Update utils to handle DM
+        to_speak = format_speak_tags(sentence, False)
         LOG.debug(to_speak)
         if to_speak:
-            url = self._build_url(to_speak)
+            url = self._build_url(normalize_string_to_speak(to_speak))
             with stopwatch:
                 wav_data = urlopen(url).read()
             LOG.debug(f"Request time={stopwatch.time}")
