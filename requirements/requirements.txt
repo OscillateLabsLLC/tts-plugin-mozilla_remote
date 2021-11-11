@@ -1,1 +1,1 @@
-neon-utils~=0.12.4
+neon-utils~=0.12
