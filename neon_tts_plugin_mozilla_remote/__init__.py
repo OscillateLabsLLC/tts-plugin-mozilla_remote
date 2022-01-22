@@ -31,8 +31,6 @@ except ImportError:
     from mycroft.tts import TTS, TTSValidator
 from mycroft.metrics import Stopwatch
 
-LOG.name = "MozillaRemoteTTS"
-
 
 class MozillaRemoteTTS(TTS):
 
