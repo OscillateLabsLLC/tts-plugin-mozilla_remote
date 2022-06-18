@@ -30,7 +30,7 @@ from neon_tts_plugin_mozilla_remote import MozillaRemoteTTS
 class TestMozilla(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
-        tts_url = os.getenv("TTS_URL")
+        tts_url = os.getenv("TTS_URL") or "https://mtts.2022.us"
         cls.mTTS = MozillaRemoteTTS(config={"api_url": tts_url})
 
     @classmethod
@@ -43,6 +43,8 @@ class TestMozilla(unittest.TestCase):
             cls.mTTS.playback.stop()
             cls.mTTS.playback.join()
         except AttributeError:
+            pass
+        except RuntimeError:
             pass
 
     def test_speak_no_params(self):

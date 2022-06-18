@@ -63,7 +63,7 @@ setup(
     url='https://github.com/NeonGeckoCom/neon-tts-plugin-mozilla_remote',
     author='Neongecko',
     author_email='developers@neon.ai',
-    license='NeonAI License v1.0',
+    license='BSD 3',
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt"),
     zip_safe=True,
