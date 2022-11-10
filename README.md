@@ -8,8 +8,8 @@ using the mycroft.conf
 
 ```json
 "tts": {
-    "module": "neon-tts-plugin-mozilla-remote",
-    "neon-tts-plugin-mozilla-remote": {
+    "module": "mozilla_remote",
+    "mozilla_remote": {
       "api_url": "http://0.0.0.0:5002/api/tts"
     }
 }
@@ -19,8 +19,8 @@ using the neon config
 
 ```yaml
 tts:
-    module: neon-tts-plugin-mozilla-remote
-    neon-tts-plugin-mozilla-remote: {"api_url": "http://0.0.0.0:5002/api/tts"}
+    module: mozilla_remote
+    mozilla_remote: {"api_url": "http://0.0.0.0:5002/api/tts"}
 ```
 
 ## Usage

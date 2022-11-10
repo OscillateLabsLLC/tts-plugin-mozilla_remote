@@ -36,9 +36,9 @@ class MozillaRemoteTTS(TTS):
     def __init__(self, lang="en-us", config=None):
         super().__init__(lang, config,
                          RemoteMozillaTTSValidator(self),
-                         audio_ext="mp3")
+                         audio_ext="wav")
         self.url = self.config.get("api_url") or \
-            self.config.get("url", "http://0.0.0.0:5002/api/tts")  # mycroft-core compat
+            self.config.get("url") or "https://mtts.2022.us/api/tts"  # mycroft-core compat
 
     def get_tts(self, sentence, wav_file, lang=None):
         sentence = self.remove_ssml(self.format_speak_tags(sentence, False))
