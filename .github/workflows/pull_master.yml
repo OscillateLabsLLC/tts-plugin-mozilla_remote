@@ -7,6 +7,10 @@ on:
       - dev
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   pull_changes:
     runs-on: ubuntu-latest
