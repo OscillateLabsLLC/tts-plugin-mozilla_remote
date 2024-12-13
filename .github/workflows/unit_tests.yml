@@ -29,6 +29,6 @@ jobs:
       - name: Upload TTS test results
         uses: actions/upload-artifact@v4
         with:
-          name: pytest-results-3
+          name: pytest-results-${{ matrix.python-version }}
           path: tests/tts-test-results.xml
         if: ${{ always() }}
