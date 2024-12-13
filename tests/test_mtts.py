@@ -24,7 +24,7 @@ import sys
 import unittest
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from neon_tts_plugin_mozilla_remote import MozillaRemoteTTS
+from tts_plugin_mozilla_remote import MozillaRemoteTTS
 
 
 class TestMozilla(unittest.TestCase):

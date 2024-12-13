@@ -29,7 +29,7 @@
 from setuptools import setup, find_packages
 from os import path, getenv
 
-PLUGIN_ENTRY_POINT = 'mozilla_remote = neon_tts_plugin_mozilla_remote:MozillaRemoteTTS'
+PLUGIN_ENTRY_POINT = 'mozilla_remote = tts_plugin_mozilla_remote:MozillaRemoteTTS'
 
 
 def get_requirements(requirements_filename: str):
@@ -53,6 +53,7 @@ def get_requirements(requirements_filename: str):
 with open("README.md", "r") as f:
     long_description = f.read()
 
+version = "2.0.0"
 with open("./version.py", "r", encoding="utf-8") as v:
     for line in v.readlines():
         if line.startswith("__version__"):
@@ -62,14 +63,14 @@ with open("./version.py", "r", encoding="utf-8") as v:
                 version = line.split("'")[1]
 
 setup(
-    name='neon-tts-plugin-mozilla_remote',
+    name='tts-plugin-mozilla_remote',
     version=version,
-    description='A Mozilla TTS plugin for Neon',
+    description='A Mozilla/Coqui TTS plugin for Neon and OVOS',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/NeonGeckoCom/neon-tts-plugin-mozilla_remote',
-    author='Neongecko',
-    author_email='developers@neon.ai',
+    url='https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote',
+    author='Neongecko/Oscillate Labs',
+    author_email='mike@oscillatelabs.net',
     license='BSD 3',
     packages=find_packages(),
     install_requires=get_requirements("requirements.txt"),
@@ -77,8 +78,8 @@ setup(
     classifiers=[
         'Intended Audience :: Developers',
         'Topic :: Text Processing :: Linguistic',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3',
     ],
-    keywords='mycroft plugin tts',
-    entry_points={'mycroft.plugin.tts': PLUGIN_ENTRY_POINT}
+    keywords='mycroft ovos neon plugin tts',
+    entry_points={'ovos.plugin.tts': PLUGIN_ENTRY_POINT}
 )

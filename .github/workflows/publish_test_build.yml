@@ -6,19 +6,19 @@ on:
     branches:
       - dev
     paths-ignore:
-      - 'version.py'
+      - "version.py"
 
 jobs:
   build_and_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
       - name: Setup Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.11
       - name: Install Build Tools
         run: |
           python -m pip install build wheel
