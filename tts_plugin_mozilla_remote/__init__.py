@@ -25,10 +25,10 @@
 # LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 # NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 # SOFTWARE,  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 import requests
-
 from ovos_plugin_manager.templates.tts import TTS, TTSValidator
+
+from .version import __version__
 
 
 class MozillaRemoteTTS(TTS):

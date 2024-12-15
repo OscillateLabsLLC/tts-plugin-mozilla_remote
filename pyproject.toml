@@ -26,7 +26,7 @@ Homepage = "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote"
 mozilla_remote = "tts_plugin_mozilla_remote:MozillaRemoteTTS"
 
 [tool.setuptools.dynamic]
-version = { attr = "version.__version__" }
+version = { attr = "tts_plugin_mozilla_remote.version.__version__" }
 dependencies = { file = ["requirements/requirements.txt"] }
 optional-dependencies.test = { file = ["requirements/test_requirements.txt"] }
 
