@@ -32,29 +32,26 @@ from ovos_plugin_manager.templates.tts import TTS, TTSValidator
 
 
 class MozillaRemoteTTS(TTS):
-
     def __init__(self, lang="en-us", config=None):
-        super().__init__(lang, config,
-                         RemoteMozillaTTSValidator(self),
+        super().__init__(config=config,
+                         validator=RemoteMozillaTTSValidator(self),
                          audio_ext="wav")
+        self.lang = lang
         self.url = self.config.get("api_url") or \
             self.config.get("url") or "https://mtts.2022.us/api/tts"  # mycroft-core compat
 
-    def get_tts(self, sentence, wav_file, lang=None):
+    def get_tts(self, sentence, wav_file, lang=None, voice=None):
         sentence = self.remove_ssml(self.format_speak_tags(sentence, False))
         if not sentence:
             return None, None
         params = {"text": sentence}
-        wav_data = requests.get(self.url, params=params).content
+        wav_data = requests.get(self.url, params=params, timeout=15).content
         with open(wav_file, "wb") as f:
             f.write(wav_data)
         return wav_file, None
 
 
 class RemoteMozillaTTSValidator(TTSValidator):
-    def __init__(self, tts):
-        super(RemoteMozillaTTSValidator, self).__init__(tts)
-
     def validate_lang(self):
         # TODO
         pass

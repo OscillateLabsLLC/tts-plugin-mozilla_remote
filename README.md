@@ -2,6 +2,8 @@
 
 TTS Plugin for Remote Mozilla or Coqui Text-to-Speech. Note that this module requires a local or remote API server to be available.
 
+Need to set up a Coqui server? Check out [this actively maintained Coqui fork](https://github.com/idiap/coqui-ai-TTS).
+
 Looking for a Coqui plugin that also loads the model? Check out [ovos-tts-plugin-coqui](https://github.com/OpenVoiceOS/ovos-tts-plugin-coqui)
 
 ## Configuration

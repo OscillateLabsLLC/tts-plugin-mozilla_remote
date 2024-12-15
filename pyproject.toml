@@ -1,0 +1,35 @@
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project]
+name = "tts-plugin-mozilla_remote"
+description = "A Mozilla/Coqui TTS plugin for Neon and OVOS"
+readme = "README.md"
+authors = [
+    { name = "Neongecko/Oscillate Labs", email = "mike@oscillatelabs.net" },
+]
+license = { text = "BSD-3-Clause" }
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: Text Processing :: Linguistic",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["mycroft", "ovos", "neon", "plugin", "tts"]
+dynamic = ["version", "dependencies"]
+
+[project.urls]
+Homepage = "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote"
+
+[project.entry-points."mycroft.plugin.tts"]
+mozilla_remote = "tts_plugin_mozilla_remote:MozillaRemoteTTS"
+
+[tool.pdm.version]
+source = "file"
+path = "version.py"
+
+[tool.pdm.build]
+includes = ["tts_plugin_mozilla_remote"]
+
+[tool.pdm.dynamic]
+dependencies = { file = ["requirements/requirements.txt"] }
