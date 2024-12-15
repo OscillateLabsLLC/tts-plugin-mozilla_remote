@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v2.0.1...v2.0.2) (2024-12-15)
+
+
+### Bug Fixes
+
+* build workflow ([b0128e0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/b0128e09746bebc7bc58bb494afb44fffe014805))
+
 ## [2.0.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v2.0.0...v2.0.1) (2024-12-15)
 
 
