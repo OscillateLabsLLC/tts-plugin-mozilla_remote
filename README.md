@@ -17,7 +17,7 @@ using mycroft.conf
 }
 ```
 
-using neon.yaml
+Using neon.yaml
 
 ```yaml
 tts:
