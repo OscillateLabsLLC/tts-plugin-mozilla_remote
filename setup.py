@@ -53,7 +53,7 @@ def get_requirements(requirements_filename: str):
 with open("README.md", "r") as f:
     long_description = f.read()
 
-version = "1.1.0"
+version = "1.2.0"
 with open("./version.py", "r", encoding="utf-8") as v:
     for line in v.readlines():
         if line.startswith("__version__"):

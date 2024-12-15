@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v1.1.0...v1.2.0) (2024-12-15)
+
+
+### Features
+
+* kick off workflow ([c733287](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/c733287a45aeb3a3c0bc1c16e5ad1c0beaa68a79))
+
 ## [1.1.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v1.0.0...v1.1.0) (2024-12-15)
 
 
