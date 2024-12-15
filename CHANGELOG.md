@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.0.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v1.2.0...v2.0.0) (2024-12-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* modern build process
+
+### Features
+
+* modern build process ([a4783ee](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/a4783ee82e184e96203ecc908b084d0219e87ce8))
+
+
+### Bug Fixes
+
+* remove lang from super init to clear deprecation warning ([a4783ee](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/a4783ee82e184e96203ecc908b084d0219e87ce8))
+
 ## [1.2.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v1.1.0...v1.2.0) (2024-12-15)
 
 
