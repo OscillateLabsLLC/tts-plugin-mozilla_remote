@@ -81,5 +81,5 @@ setup(
         'Programming Language :: Python :: 3',
     ],
     keywords='mycroft ovos neon plugin tts',
-    entry_points={'ovos.plugin.tts': PLUGIN_ENTRY_POINT}
+    entry_points={'mycroft.plugin.tts': PLUGIN_ENTRY_POINT}
 )
