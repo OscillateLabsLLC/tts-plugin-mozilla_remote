@@ -1,6 +1,6 @@
 # NEON AI (TM) SOFTWARE, Software Development Kit & Application Development System
 # All trademark and other rights reserved by their respective owners
-# Copyright 2008-2021 Neongecko.com Inc.
+# Copyright 2008-2025 Neongecko.com Inc. Oscillate Labs LLC
 #
 # Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
 # following conditions are met:
@@ -22,9 +22,11 @@
 import os
 import sys
 import unittest
+from pathlib import Path
+from unittest.mock import patch, MagicMock
 
 sys.path.append(os.path.dirname(os.path.dirname(__file__)))
-from tts_plugin_mozilla_remote import MozillaRemoteTTS
+from tts_plugin_mozilla_remote import MozillaRemoteTTS, RemoteMozillaTTSValidator
 
 
 class TestMozilla(unittest.TestCase):
@@ -35,16 +37,19 @@ class TestMozilla(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls) -> None:
+        # Clean up all test files
+        test_dir = os.path.dirname(__file__)
+        for test_file in ["test.wav", "test2.wav"]:
+            try:
+                os.remove(os.path.join(test_dir, test_file))
+            except FileNotFoundError:
+                pass
+
         try:
-            os.remove(os.path.join(os.path.dirname(__file__), "test.wav"))
-        except FileNotFoundError:
-            pass
-        try:
-            cls.mTTS.playback.stop()
-            cls.mTTS.playback.join()
-        except AttributeError:
-            pass
-        except RuntimeError:
+            if hasattr(cls.mTTS, "playback") and cls.mTTS.playback is not None:
+                cls.mTTS.playback.stop()
+                cls.mTTS.playback.join()
+        except (AttributeError, RuntimeError):
             pass
 
     def test_speak_no_params(self):
@@ -57,6 +62,53 @@ class TestMozilla(unittest.TestCase):
         file, _ = self.mTTS.get_tts("</speak>Hello.", out_file)
         self.assertFalse(os.path.isfile(out_file))
 
+    def test_pathlike_output(self):
+        """Test that PathLike objects work for output files."""
+        out_file = Path(os.path.dirname(__file__)) / "test.wav"
+        file, _ = self.mTTS.get_tts("Hello.", out_file)
+        self.assertEqual(file, out_file)
 
-if __name__ == '__main__':
+    def test_no_url_configured(self):
+        """Test that proper error is raised when URL is not configured."""
+        with self.assertRaisesRegex(ValueError, "TTS URL not configured"):
+            MozillaRemoteTTS(config={"url": "", "api_url": ""})
+
+    def test_invalid_response_type(self):
+        """Test handling of invalid response types."""
+        with patch("requests.get") as mock_get:
+            mock_response = MagicMock()
+            mock_response.content = {"error": "Invalid response"}  # Not bytes
+            mock_response.raise_for_status.return_value = None
+            mock_get.return_value = mock_response
+
+            with self.assertRaisesRegex(ValueError, "Invalid response type"):
+                self.mTTS.get_tts("Hello.", "test.wav")
+
+    def test_empty_response(self):
+        """Test handling of empty responses."""
+        with patch("requests.get") as mock_get:
+            mock_response = MagicMock()
+            mock_response.content = b""  # Empty bytes
+            mock_response.raise_for_status.return_value = None
+            mock_get.return_value = mock_response
+
+            with self.assertRaisesRegex(ValueError, "Empty response"):
+                self.mTTS.get_tts("Hello.", "test.wav")
+
+    def test_voice_param_encoding(self):
+        """Test that voice parameter is properly URL encoded."""
+        with patch("requests.get") as mock_get:
+            mock_response = MagicMock()
+            mock_response.content = b"test"
+            mock_response.raise_for_status.return_value = None
+            mock_get.return_value = mock_response
+
+            self.mTTS.get_tts("Hello.", "test.wav", voice="Test Voice")
+
+            # Verify the space was encoded
+            _, kwargs = mock_get.call_args
+            self.assertEqual(kwargs["params"]["voice"], "Test%20Voice")
+
+
+if __name__ == "__main__":
     unittest.main()
