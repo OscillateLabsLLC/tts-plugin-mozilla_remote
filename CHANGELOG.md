@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v2.0.2...v3.0.0) (2025-03-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* removes mycroft compat, add validation across the plugin
+
+### Bug Fixes
+
+* removes mycroft compat, add validation across the plugin ([44ba01f](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/44ba01f32f0105c00e7930ed9befa064405a26c7))
+
 ## [2.0.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v2.0.1...v2.0.2) (2024-12-15)
 
 
