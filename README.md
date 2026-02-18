@@ -1,5 +1,7 @@
 # Mozilla/Coqui TTS Plugin for OVOS or Neon
 
+[![Status: Security Fixes Only](https://img.shields.io/badge/status-security%20fixes%20only-orange)](https://github.com/OscillateLabsLLC/.github/blob/main/SUPPORT_STATUS.md)
+
 TTS Plugin for Remote Mozilla or Coqui Text-to-Speech. Note that this module requires a local or remote API server to be available.
 
 Need to set up a Coqui server? Check out [this actively maintained Coqui fork](https://github.com/idiap/coqui-ai-TTS).
