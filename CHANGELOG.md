@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.0...v3.0.1) (2026-04-23)
+
+
+### Bug Fixes
+
+* **deps:** clear 1 critical + 8 high Dependabot alerts via uv lock --upgrade ([fefe049](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/fefe0499c3ff406b53005e32cf4d8b70e1bdf9ac))
+* **deps:** uv lock --upgrade clears 1 critical + 8 high Dependabot alerts ([616bbbd](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/616bbbd2f12ca9b21839ca87c355006da0000b54))
+
 ## [3.0.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v2.0.2...v3.0.0) (2025-03-11)
 
 
