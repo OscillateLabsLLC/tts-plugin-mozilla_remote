@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.0.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.1...v3.0.2) (2026-04-23)
+
+
+### Bug Fixes
+
+* **deps:** pin setuptools &lt;81 to avoid pkg_resources removal ([d59961b](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/d59961b62bf81d65002e537816661da05850823d))
+* **deps:** pin setuptools &lt;81 to avoid pkg_resources removal ([283e65e](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/283e65ecc8d55147a80567c56661e186cac936eb))
+
 ## [3.0.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.0...v3.0.1) (2026-04-23)
 
 
