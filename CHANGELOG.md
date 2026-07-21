@@ -1,5 +1,16 @@
 # Changelog
 
+## [3.0.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.1...v3.0.2) (2026-07-21)
+
+
+### Bug Fixes
+
+* **ci:** bump pip-license-checker to v3 for SPDX license-expression support ([8eb8100](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/8eb8100235a9d6368de2d70ec2476421622a62a0))
+* **deps:** consolidate dependency declarations into pyproject.toml ([ed57c18](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/ed57c18eb6a04aeb04a5fec82c947efc30438b09))
+* **deps:** consolidate dependency declarations into pyproject.toml ([3c030a9](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/3c030a99c561c7640b068a2e780b7f3fd708d6eb))
+* **deps:** pin setuptools &lt;81 to avoid pkg_resources removal ([d59961b](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/d59961b62bf81d65002e537816661da05850823d))
+* **deps:** pin setuptools &lt;81 to avoid pkg_resources removal ([283e65e](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/283e65ecc8d55147a80567c56661e186cac936eb))
+
 ## [3.0.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.0...v3.0.1) (2026-04-23)
 
 
