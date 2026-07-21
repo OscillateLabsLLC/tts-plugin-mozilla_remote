@@ -1456,7 +1456,7 @@ requires-dist = [
     { name = "ovos-plugin-manager" },
     { name = "pytest", marker = "extra == 'test'" },
     { name = "requests" },
-    { name = "setuptools" },
+    { name = "setuptools", specifier = "<81" },
 ]
 provides-extras = ["test"]
 
