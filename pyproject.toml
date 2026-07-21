@@ -17,7 +17,18 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 keywords = ["mycroft", "ovos", "neon", "plugin", "tts"]
-dynamic = ["version", "dependencies", "optional-dependencies"]
+dynamic = ["version"]
+dependencies = [
+    "ovos-plugin-manager",
+    "requests",
+    "setuptools<81",
+]
+
+[project.optional-dependencies]
+test = [
+    "ovos-core",
+    "pytest",
+]
 
 [project.urls]
 Homepage = "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote"
@@ -27,8 +38,6 @@ mozilla_remote = "tts_plugin_mozilla_remote:MozillaRemoteTTS"
 
 [tool.setuptools.dynamic]
 version = { attr = "tts_plugin_mozilla_remote.version.__version__" }
-dependencies = { file = ["requirements/requirements.txt"] }
-optional-dependencies.test = { file = ["requirements/test_requirements.txt"] }
 
 [tool.setuptools.packages.find]
 include = ["tts_plugin_mozilla_remote*"]
