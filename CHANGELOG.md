@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.0.3](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.2...v3.0.3) (2026-09-06)
+
+
+### Bug Fixes
+
+* **deps:** bump urllib3, requests, idna, filelock, pytest for Dependabot alerts ([#17](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/issues/17)) ([63bb188](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/63bb1884d6b1db6894ca502302185d03bb15d4c5))
+
 ## [3.0.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.1...v3.0.2) (2026-07-21)
 
 
