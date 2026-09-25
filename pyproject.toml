@@ -36,6 +36,9 @@ Homepage = "https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote"
 [project.entry-points."mycroft.plugin.tts"]
 mozilla_remote = "tts_plugin_mozilla_remote:MozillaRemoteTTS"
 
+[project.entry-points."opm.tts"]
+mozilla_remote = "tts_plugin_mozilla_remote:MozillaRemoteTTS"
+
 [tool.setuptools.dynamic]
 version = { attr = "tts_plugin_mozilla_remote.version.__version__" }
 
