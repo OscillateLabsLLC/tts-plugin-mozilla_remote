@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.1.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.3...v3.1.0) (2026-09-25)
+
+
+### Features
+
+* register opm.tts entry point alongside mycroft.plugin.tts ([#19](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/issues/19)) ([5a64706](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/5a647063050c2c75948345c6a7ad0163311f8239))
+
 ## [3.0.3](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.2...v3.0.3) (2026-09-06)
 
 
