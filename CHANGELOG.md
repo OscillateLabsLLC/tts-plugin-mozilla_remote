@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.1.0...v3.1.1) (2026-10-16)
+
+
+### Bug Fixes
+
+* **deps:** bump urllib3 to 2.8.0 ([9ffffa9](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/9ffffa924a0dd18bbf69fb6a585e40aadd07e8d9))
+* **deps:** bump urllib3 to 2.8.0 ([d0aa83e](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/d0aa83e3c89f89dfd57cd57680b47d9c4139451f))
+
 ## [3.1.0](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.0.3...v3.1.0) (2026-09-25)
 
 
