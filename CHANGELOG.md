@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.1.2](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.1.1...v3.1.2) (2026-11-04)
+
+
+### Bug Fixes
+
+* **deps:** bump certifi to 2026.10.23 ([af1993e](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/af1993e704763c5c285e5786a3e7de47a15e656f))
+* **deps:** bump certifi to 2026.10.23 ([fceaf80](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/commit/fceaf80a6a2e0a9c06d1c193744cf1dfffc2b987))
+
 ## [3.1.1](https://github.com/OscillateLabsLLC/tts-plugin-mozilla_remote/compare/v3.1.0...v3.1.1) (2026-10-16)
 
 
